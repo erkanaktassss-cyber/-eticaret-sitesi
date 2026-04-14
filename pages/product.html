@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="tr"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ürün Detayı | Lumina Atelier</title>
+<link rel="stylesheet" href="/assets/css/style.css" />
+</head><body>
+<header class="header"><div class="container nav">
+<a class="brand" href="/"><span class="brand-logo"></span>LUMINA ATELIER</a>
+<nav class="nav-links"><a href="/">Ana Sayfa</a><a href="/pages/categories.html">Kategoriler</a><a href="/pages/about.html">Hakkımızda</a><a href="/pages/contact.html">İletişim</a></nav>
+<div class="nav-actions"><a id="userName" href="/pages/login.html">Giriş Yap</a><a href="/pages/cart.html">Sepet <span id="cartCount" class="badge">0</span></a></div>
+</div></header>
+<main class="container section"><div id="detail"></div></main>
+<footer class="footer"><div class="container">© 2026 Lumina Atelier</div></footer>
+<script src="/assets/js/products.js"></script><script src="/assets/js/main.js"></script>
+<script>
+const id = new URLSearchParams(location.search).get('id');
+const p = findProduct(id);
+const detail = document.getElementById('detail');
+if (!p) detail.innerHTML = '<p>Ürün bulunamadı.</p>';
+else detail.innerHTML = `<div class="detail-layout"><div class="panel"><img src="${p.image}" alt="${p.name}" /></div><div class="panel"><p class="muted">${p.category}</p><h1>${p.name}</h1><p>${p.description}</p><p class="price">${fmt.format(p.price)}</p><button class="btn btn-primary" id="add">Sepete Ekle</button></div></div>`;
+const add = document.getElementById('add'); if (add) add.onclick = () => addToCart(id,1);
+</script>
+</body></html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="tr"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hesabım | Lumina Atelier</title>
+<link rel="stylesheet" href="/assets/css/style.css" />
+</head><body>
+<header class="header"><div class="container nav">
+<a class="brand" href="/"><span class="brand-logo"></span>LUMINA ATELIER</a>
+<nav class="nav-links"><a href="/">Ana Sayfa</a><a href="/pages/categories.html">Kategoriler</a><a href="/pages/about.html">Hakkımızda</a><a href="/pages/contact.html">İletişim</a></nav>
+<div class="nav-actions"><a class="active" id="userName" href="/pages/account.html">Hesabım</a><a href="/pages/cart.html">Sepet <span id="cartCount" class="badge">0</span></a></div>
+</div></header>
+<main class="container section"><div class="panel"><h1>Hesabım</h1><p id="info"></p><button id="logout" class="btn btn-secondary">Çıkış Yap</button></div></main>
+<footer class="footer"><div class="container">© 2026 Lumina Atelier</div></footer>
+<script src="/assets/js/main.js"></script>
+<script>
+const user = JSON.parse(localStorage.getItem('lumina_user') || 'null');
+if(!user){ location.href='/pages/login.html'; }
+else document.getElementById('info').textContent=`Ad: ${user.name} | E-posta: ${user.email}`;
+document.getElementById('logout').onclick=()=>{localStorage.removeItem('lumina_user');location.href='/';};
+</script>
+</body></html>

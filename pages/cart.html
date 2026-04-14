@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sepetim | NovaShop</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="../index.html">Nova<span>Shop</span></a>
+      <button class="menu-toggle" aria-label="Menüyü aç">☰</button>
+      <nav class="nav-links">
+        <a href="../index.html">Ana Sayfa</a>
+        <a href="product.html">Ürünler</a>
+        <a href="cart.html" class="active">Sepet</a>
+        <a href="about.html">Hakkımızda</a>
+        <a href="contact.html">İletişim</a>
+        <a href="login.html" class="btn btn-sm">Giriş</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1>Sepetim</h1>
+    <div id="cartContainer" class="cart-list"></div>
+    <div class="cart-summary card">
+      <h3>Özet</h3>
+      <p>Toplam: <strong id="cartTotal">₺0</strong></p>
+      <button class="btn" id="checkoutBtn">Ödemeye Geç</button>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container">© 2026 NovaShop</div></footer>
+  <script src="../assets/js/products.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

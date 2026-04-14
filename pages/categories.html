@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="tr"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kategoriler | Lumina Atelier</title>
+<link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header class="header"><div class="container nav">
+<a class="brand" href="/"><span class="brand-logo"></span>LUMINA ATELIER</a>
+<nav class="nav-links"><a href="/">Ana Sayfa</a><a class="active" href="/pages/categories.html">Kategoriler</a><a href="/pages/about.html">Hakkımızda</a><a href="/pages/contact.html">İletişim</a></nav>
+<div class="nav-actions"><a id="userName" href="/pages/login.html">Giriş Yap</a><a href="/pages/cart.html">Sepet <span id="cartCount" class="badge">0</span></a></div>
+</div></header>
+<main class="container">
+<section class="page-header"><h1>Kategoriler</h1><p class="muted" id="filterInfo">Tüm ürünler listeleniyor.</p></section>
+<section><div id="list" class="grid-3"></div></section>
+</main>
+<footer class="footer"><div class="container">© 2026 Lumina Atelier</div></footer>
+<script src="/assets/js/products.js"></script><script src="/assets/js/main.js"></script>
+<script>
+const category = new URLSearchParams(location.search).get('category');
+const list = category ? window.PRODUCTS.filter(p=>p.category===category) : window.PRODUCTS;
+if (category) document.getElementById('filterInfo').textContent = `Filtre: ${category}`;
+document.getElementById('list').innerHTML = list.map(renderProductCard).join('');
+bindAddButtons(document);
+</script>
+</body></html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="tr"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Giriş Yap | Lumina Atelier</title>
+<link rel="stylesheet" href="/assets/css/style.css" />
+</head><body>
+<header class="header"><div class="container nav">
+<a class="brand" href="/"><span class="brand-logo"></span>LUMINA ATELIER</a>
+<nav class="nav-links"><a href="/">Ana Sayfa</a><a href="/pages/categories.html">Kategoriler</a><a href="/pages/about.html">Hakkımızda</a><a href="/pages/contact.html">İletişim</a></nav>
+<div class="nav-actions"><a class="active" id="userName" href="/pages/login.html">Giriş Yap</a><a href="/pages/cart.html">Sepet <span id="cartCount" class="badge">0</span></a></div>
+</div></header>
+<main class="container section"><div class="panel" style="max-width:520px;margin:auto;">
+<h1>Hesabınıza Giriş Yapın</h1>
+<p class="muted">Demo hesap: demo@lumina.com / 123456</p>
+<form id="loginForm" class="form">
+<input class="input" type="email" name="email" placeholder="E-posta" required />
+<input class="input" type="password" name="password" placeholder="Şifre" required />
+<button class="btn btn-primary" type="submit">Giriş Yap</button>
+</form></div></main>
+<footer class="footer"><div class="container">© 2026 Lumina Atelier</div></footer>
+<script src="/assets/js/main.js"></script>
+<script>
+const USER_KEY='lumina_user';
+document.getElementById('loginForm').onsubmit=(e)=>{
+ e.preventDefault();
+ const data=new FormData(e.target);
+ const email=data.get('email'); const password=data.get('password');
+ if(email==='demo@lumina.com' && password==='123456'){
+   localStorage.setItem(USER_KEY, JSON.stringify({name:'Demo Kullanıcı', email}));
+   alert('Giriş başarılı!'); location.href='/';
+ } else alert('Geçersiz bilgiler. Demo hesabı kullanın.');
+}
+</script>
+</body></html>

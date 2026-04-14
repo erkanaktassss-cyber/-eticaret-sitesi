@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="tr"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sepetim | Lumina Atelier</title>
+<link rel="stylesheet" href="/assets/css/style.css" />
+</head><body>
+<header class="header"><div class="container nav">
+<a class="brand" href="/"><span class="brand-logo"></span>LUMINA ATELIER</a>
+<nav class="nav-links"><a href="/">Ana Sayfa</a><a href="/pages/categories.html">Kategoriler</a><a href="/pages/about.html">Hakkımızda</a><a href="/pages/contact.html">İletişim</a></nav>
+<div class="nav-actions"><a id="userName" href="/pages/login.html">Giriş Yap</a><a class="active" href="/pages/cart.html">Sepet <span id="cartCount" class="badge">0</span></a></div>
+</div></header>
+<main class="container section">
+<h1>Sepetim</h1><div class="panel" id="cartWrap"></div>
+</main><footer class="footer"><div class="container">© 2026 Lumina Atelier</div></footer>
+<script src="/assets/js/products.js"></script><script src="/assets/js/main.js"></script>
+<script>
+function renderCart(){
+ const wrap=document.getElementById('cartWrap');
+ const cart=getCart();
+ if(!cart.length){wrap.innerHTML='<p>Sepetiniz boş. <a href="/pages/categories.html">Alışverişe başla</a></p>'; return;}
+ let total=0;
+ wrap.innerHTML=cart.map(i=>{const p=findProduct(i.id); if(!p) return ''; const line=p.price*i.qty; total+=line; return `<div class="cart-item"><img src="${p.image}" alt="${p.name}" /><div><strong>${p.name}</strong><div class="muted">${fmt.format(p.price)}</div></div><div><input class="input qty" type="number" min="1" value="${i.qty}" data-qty="${i.id}" /><button class="btn btn-secondary" data-del="${i.id}">Sil</button></div></div>`}).join('') + `<div class="total-box"><h3>Toplam: ${fmt.format(total)}</h3><button class="btn btn-primary">Ödemeye Geç</button></div>`;
+ document.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{removeFromCart(b.dataset.del);renderCart();});
+ document.querySelectorAll('[data-qty]').forEach(inp=>inp.onchange=()=>{updateCartQty(inp.dataset.qty,Number(inp.value));renderCart();});
+}
+renderCart();
+</script>
+</body></html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina Atelier | Premium E-Ticaret</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/"><span class="brand-logo"></span>LUMINA ATELIER</a>
+      <nav class="nav-links">
+        <a class="active" href="/">Ana Sayfa</a>
+        <a href="/pages/categories.html">Kategoriler</a>
+        <a href="/pages/about.html">Hakkımızda</a>
+        <a href="/pages/contact.html">İletişim</a>
+      </nav>
+      <div class="nav-actions">
+        <a id="userName" href="/pages/login.html">Giriş Yap</a>
+        <a href="/pages/cart.html">Sepet <span id="cartCount" class="badge">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Modern şehir yaşamına özel seçilmiş premium ürünler.</h1>
+        <p>Lumina Atelier, hızlı tüketim yerine uzun ömürlü kaliteyi ve zamansız tasarımı merkeze alan bir marka deneyimi sunar.</p>
+        <a href="/pages/categories.html" class="btn btn-primary">Koleksiyonu Keşfet</a>
+        <div class="stat-grid">
+          <div class="stat"><strong>18K+</strong><span class="muted">Mutlu Müşteri</span></div>
+          <div class="stat"><strong>4.9/5</strong><span class="muted">Ortalama Puan</span></div>
+          <div class="stat"><strong>%97</strong><span class="muted">Zamanında Teslimat</span></div>
+        </div>
+      </div>
+      <div class="visual-card">
+        <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1100&q=80" alt="Mağaza görseli" />
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Öne Çıkan Ürünler</h2>
+      <p class="sub">Bu sezonun en çok tercih edilen parçaları.</p>
+      <div id="featuredProducts" class="grid-3"></div>
+    </section>
+
+    <section class="section">
+      <h2>Kategoriler</h2>
+      <p class="sub">Tarzına uygun kategoriden alışverişe başla.</p>
+      <div class="grid-4">
+        <a class="card category" style="background-image:url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80')" href="/pages/categories.html?category=Giyim"><span class="label">Giyim</span></a>
+        <a class="card category" style="background-image:url('https://images.unsplash.com/photo-1511556670410-fc7c2d4c5f0d?auto=format&fit=crop&w=800&q=80')" href="/pages/categories.html?category=Aksesuar"><span class="label">Aksesuar</span></a>
+        <a class="card category" style="background-image:url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80')" href="/pages/categories.html?category=Ayakkabı"><span class="label">Ayakkabı</span></a>
+        <a class="card category" style="background-image:url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=800&q=80')" href="/pages/categories.html?category=Teknoloji"><span class="label">Teknoloji</span></a>
+      </div>
+    </section>
+
+    <section class="admin-note">
+      <strong>Yönetici paneline uygun yapı:</strong> Ürün verileri `assets/js/products.js` içinde merkezi tutulur. `admin/` klasörü API/panel geliştirmesi için ayrılmıştır.
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 Lumina Atelier — Tüm hakları saklıdır.</div>
+  </footer>
+
+  <script src="/assets/js/products.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const target = document.getElementById('featuredProducts');
+    target.innerHTML = window.PRODUCTS.slice(0, 3).map(renderProductCard).join('');
+    bindAddButtons(target);
+  </script>
+</body>
+</html>

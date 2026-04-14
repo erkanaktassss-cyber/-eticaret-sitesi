@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaShop | İletişim</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="../index.html" class="brand">NovaShop</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menü">☰</button>
+        <nav class="nav-links" id="nav-links">
+          <a data-nav-link href="../index.html">Ana Sayfa</a>
+          <a data-nav-link href="product.html">Ürünler</a>
+          <a data-nav-link href="cart.html">Sepet <span class="badge" data-cart-count>0</span></a>
+          <a data-nav-link href="login.html">Giriş</a>
+          <a data-nav-link href="about.html">Hakkımızda</a>
+          <a data-nav-link href="contact.html">İletişim</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1>İletişim</h1>
+          <p>Sorularınız ve iş birlikleri için aşağıdaki formu kullanarak bize ulaşabilirsiniz.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container" style="display: grid; gap: 18px; grid-template-columns: 1.3fr 1fr">
+          <article class="card form-card">
+            <form id="contact-form" class="form-grid">
+              <label for="name">Ad Soyad</label>
+              <input class="input" id="name" required placeholder="Adınız Soyadınız" />
+
+              <label for="email">E-posta</label>
+              <input class="input" id="email" type="email" required placeholder="ornek@mail.com" />
+
+              <label for="subject">Konu</label>
+              <input class="input" id="subject" required placeholder="Mesaj konusu" />
+
+              <label for="message">Mesaj</label>
+              <textarea id="message" rows="5" required placeholder="Mesajınızı yazın..."></textarea>
+
+              <button class="btn btn-primary" type="submit">Mesaj Gönder</button>
+            </form>
+            <p id="contact-message" class="small"></p>
+          </article>
+
+          <article class="card form-card">
+            <h3>İletişim Bilgileri</h3>
+            <p class="small"><strong>Adres:</strong> Maslak Mah. Büyükdere Cad. No: 100, İstanbul</p>
+            <p class="small"><strong>Telefon:</strong> +90 212 000 00 00</p>
+            <p class="small"><strong>E-posta:</strong> destek@novashop.com</p>
+            <p class="small"><strong>Çalışma Saatleri:</strong> Hafta içi 09:00 - 18:00</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container small" style="padding: 20px 0">© <span data-current-year></span> NovaShop</div>
+    </footer>
+
+    <script src="../assets/js/products.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

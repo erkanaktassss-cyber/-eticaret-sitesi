@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaShop | Ana Sayfa</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">NovaShop</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menü">☰</button>
+        <nav class="nav-links" id="nav-links">
+          <a data-nav-link href="index.html">Ana Sayfa</a>
+          <a data-nav-link href="pages/product.html">Ürünler</a>
+          <a data-nav-link href="pages/cart.html">Sepet <span class="badge" data-cart-count>0</span></a>
+          <a data-nav-link href="pages/login.html">Giriş</a>
+          <a data-nav-link href="pages/about.html">Hakkımızda</a>
+          <a data-nav-link href="pages/contact.html">İletişim</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-card">
+          <div>
+            <h1>Modern ve Hızlı E-Ticaret Deneyimi</h1>
+            <p>
+              NovaShop ile teknoloji, moda, ev yaşam ve kişisel bakım kategorilerinde en güncel ürünlere tek
+              tıkla ulaşın. Güvenli ödeme altyapısı, hızlı teslimat ve 7/24 destek yanınızda.
+            </p>
+            <a class="btn btn-primary" href="pages/product.html">Ürünleri Keşfet</a>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1555529771-35a7a7be4a65?auto=format&fit=crop&w=1000&q=80"
+            alt="Online alışveriş"
+          />
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Öne Çıkan Ürünler</h2>
+          <div class="grid grid-4" id="featured-products"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>NovaShop</h3>
+          <p class="small">Her gün yeni kampanya ve fırsatlarla güvenli alışveriş deneyimi sunar.</p>
+        </div>
+        <div>
+          <h4>Hızlı Linkler</h4>
+          <p class="small"><a href="pages/product.html">Ürünler</a></p>
+          <p class="small"><a href="pages/cart.html">Sepetim</a></p>
+        </div>
+        <div>
+          <h4>Bülten</h4>
+          <form id="newsletter-form" class="form-grid">
+            <input class="input" type="email" required placeholder="E-posta adresiniz" />
+            <button class="btn btn-primary" type="submit">Abone Ol</button>
+          </form>
+          <p id="newsletter-message" class="small"></p>
+        </div>
+      </div>
+      <div class="container small" style="padding-bottom: 20px">© <span data-current-year></span> NovaShop</div>
+    </footer>
+
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
